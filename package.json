@@ -2,7 +2,6 @@
   "name": "webrtc_git",
   "version": "1.0.0",
   "description": "Zoom Clone using WebRTC and Websockets",
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ojin0104/webRtc.git"
@@ -10,11 +9,19 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "scripts":{
-    "dev":"nodemon"
+  "scripts": {
+    "dev": "nodemon"
   },
   "bugs": {
     "url": "https://github.com/Ojin0104/webRtc/issues"
   },
-  "homepage": "https://github.com/Ojin0104/webRtc#readme"
+  "homepage": "https://github.com/Ojin0104/webRtc#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pug": "^3.0.2",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.9"
+  }
 }
