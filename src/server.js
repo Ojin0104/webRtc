@@ -1,9 +1,9 @@
 import express from 'express';
 import http from "http";
 import { WebSocketServer } from 'ws';
-import path from 'path';
+
 const app=express();
- const __dirname=path.resolve();
+
 app.set("view engine","pug");
 app.set("views",__dirname + "/views");
 app.use("/public",express.static(__dirname+"/public"));
@@ -17,16 +17,21 @@ const server=http.createServer(app);
 const wss=new WebSocketServer({ server} );
 
 
-   
-
+const sockets=[];   
+function onSocketClose(){
+    console.log("close");
+}
 
 wss.on("connection",(socket)=>{
-    console.log("Connected to Browser v")
-    socket.on("close",()=> console.log("Disconnected from the BRowser"));
+    sockets.push(socket);
+    console.log("Connected to Browser v");
+    socket.on("close",onSocketClose);
     socket.on("message",(message)=>{
-        console.log(message);
-    })
-    socket.send("hello!!");
+        sockets.forEach((aSocket)=> aSocket.send(message.toString('utf8')));
+       
+    });
+
+  
 });
 
 

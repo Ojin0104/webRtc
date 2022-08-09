@@ -18,11 +18,12 @@
   "homepage": "https://github.com/Ojin0104/webRtc#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "nodemon": "^2.0.19",
     "pug": "^3.0.2",
     "ws": "^8.8.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.9"
-  },
-  "type": "module"
+  }
+  
 }
